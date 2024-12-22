@@ -21,6 +21,11 @@ class Search {
     Http http = Http();
     List<Movie> movies = [];
     String text = await http.get(site.xml + "?wd=" + keyword);
+
+    print('-======${site.server}');
+    print('-======${site.xml + "?wd=" + keyword}');
+    print('-======${text}');
+
     try {
       temp = getUrlsApi(text, site);
     } catch (e) {
@@ -109,6 +114,10 @@ class Search {
     List<Movie> movies = [];
     String text = await http.post(site.server + "index.php?m=vod-search",
         data: {"wd": keyword, "submit": "search"});
+    print('-======${site.server}');
+    print('-======${site.server + "index.php?m=vod-search"}');
+    print('-======${text}');
+
     dynamic temp = getUrlsWeb(text, site);
     List<String> links = temp['links'];
     List<String> titles = temp['titles'];

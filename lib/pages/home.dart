@@ -128,17 +128,17 @@ class _HomeState extends State<Home> {
     http = Http();
     //获取推送
     String result = await http.get('$SERVER/$APP/push.json');
-    if (result.contains('请求失败')) {
-      push = Push.fromJson(jsonDecode(PUSH));
-      await myTips(context, "通知", push.info);
-      if (push.force.contains('是')) return;
-    } else {
-      push = Push.fromJson(jsonDecode(result));
-      if (push.flag.contains('开')) {
-        await myTips(context, "通知", push.info);
-        if (push.force.contains('是')) return;
-      }
-    }
+    // if (result.contains('请求失败')) {
+    //   push = Push.fromJson(jsonDecode(PUSH));
+    //   await myTips(context, "通知", push.info);
+    //   if (push.force.contains('是')) return;
+    // } else {
+    //   push = Push.fromJson(jsonDecode(result));
+    //   if (push.flag.contains('开')) {
+    //     await myTips(context, "通知", push.info);
+    //     if (push.force.contains('是')) return;
+    //   }
+    // }
     //获取网页播放器
     result = await http.get('$SERVER/$APP/player.json');
     if (result.contains('请求失败')) {

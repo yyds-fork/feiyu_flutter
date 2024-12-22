@@ -19,16 +19,17 @@ String PLAYER = r'''
     "public": "是"
 }
 ''';
+// "server": "http://www.apiokzy.com/",
 
 String SITES = r'''
 [{
         "name": "OK",
-        "server": "http://www.apiokzy.com/",
+        "server": "http://www.haozy.cc/",
         "title": "<span class=\"xing_vb4\">.*?target=\"_blank\">(.*?)</a>",
         "link": "<span class=\"xing_vb4\"><a href=\"(.*?)\"",
         "desp": "<div class=\"vodplayinfo\">(.*?)</div>",
-        "xml": "http://cj.okzy.tv/inc/api.php",
-        "item": "",
+        "xml": "http://www.haozy.cc/inc/api.php",
+        "item": "画质清晰/速度快",
         "m3u8": "name=\"copy_sel.*>(.*\\$http.*?m3u8)",
         "cover": "<img class=\"lazy\" src=\"(.*?)\" alt"
     },
